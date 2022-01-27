@@ -19,11 +19,11 @@ body{
   .btn-primary{
     border-radius:4px;
     border:none;
-    background-color:#ff425f;
+    background-color:#117021;
     box-shadow:0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset, 0px -0.4em 0px 0px rgba(34, 36, 38, 0.15) inset;
   }
   .btn-primary:hover,.btn-primary:focus,.btn-primary:active{
-    background-color:#de2c48 !important;
+    background-color:#1c7243 !important;
     box-shadow:none;
   }
   
