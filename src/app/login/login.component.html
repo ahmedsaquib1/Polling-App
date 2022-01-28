@@ -2,30 +2,33 @@
     <div class="row mt-5">
         
         <div class="spContainer mx-auto">
-            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <form [formGroup]="loginForm"  #f="ngForm">
             <div class="card px-4 py-5 border-0 shadow">
                 <div class="d-inline text-left mb-3">
                     <h3 class="font-weight-bold">Login</h3>
                 </div>
                 <div class="d-inline text-center mb-0">
                     <div class="form-group mx-auto">
-                        <input formControlName="user" class="form-control inpSp" type="text" placeholder="Username" />
+                        <input  formControlName="user" class="form-control inpSp" type="text" placeholder="Username" />
                         <small class="text-danger" *ngIf="user && user.invalid && user.touched" >Required</small>
                     </div>
                    
                 </div>
                 <div class="d-inline text-center mb-3">
                     <div class="form-group mx-auto">
-                        <input formControlName="password" class="form-control inpSp" type="password" placeholder="Password" />
+                        <input  formControlName="password" class="form-control inpSp" type="password" placeholder="Password" />
                         <small class="text-danger"  *ngIf="password && password.invalid && password.touched ">password is minimum 5 length</small>
                     </div>
                    
                 </div>
                 <div class="d-inline text-left mb-3">
                     <div class="form-group mx-auto">
-                        <button [disabled]="loginForm.invalid" class="btn btn-primary" routerLink="../dashboard">
+                        <button (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary"  >
                             Login
                         </button>
+                      
+                        
+                        
                     </div>
                 </div>
 
