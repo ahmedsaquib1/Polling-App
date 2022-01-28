@@ -12,34 +12,41 @@
                                     <label class="form-label" for="form3Example1cg">Your Name</label>
                                     <input formControlName="user" type="text" id="form3Example1cg"
                                         class="form-control form-control-lg" />
-                                    
-                                    <small class="text-danger" *ngIf="user && user.invalid && user.touched" >Required</small>
+
+                                    <small class="text-danger"
+                                        *ngIf="user && user.invalid && user.touched">Required</small>
                                 </div>
-
-
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example4cg">Password</label>
                                     <input formControlName="password" type="password" id="form3Example4cg"
-                                        class="form-control form-control-lg"  />
-                                        <small class="text-danger" *ngIf="password && password.invalid && password.touched ">password is minimum 5 length</small>
-                                   
+                                        class="form-control form-control-lg" />
+                                    <small class="text-danger"
+                                        *ngIf="password && password.invalid && password.touched">password is minimum 5
+                                        length</small>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example4cdg">Confirm your password</label>
-                                    <input [class.is-vallid]="signupForm.errors?.['misMatch']" formControlName="repassword" type="password" id="form3Example4cdg"
+                                    <input [class.is-vallid]="signupForm.errors?.['misMatch']"
+                                        formControlName="repassword" type="password" id="form3Example4cdg"
                                         class="form-control form-control-lg" />
-                                      
-                                    <small class="text-danger" *ngIf="signupForm.errors?.['misMatch']" > Password does not same</small>
+
+                                    <small class="text-danger" *ngIf="signupForm.errors?.['misMatch']">
+                                        Password does not same</small>
                                 </div>
-
-
+                                <div class="col-md-4">
+                                    <label formControlName="role" htmlfor="inputState" class="form-label">Role</label>
+                                    <select id="inputState" class="form-select">
+                                      <option>Choose...</option>
+                                      <option>user</option>
+                                      <option>admin</option>
+                                    </select>
+                                  </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" [disabled]="signupForm.invalid"
-                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                                        routerLink="../dashboard">
+                                    <button (click)="Regis()" type="submit" [disabled]="signupForm.invalid"
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
                                         Register
                                     </button>
                                 </div>

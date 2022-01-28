@@ -3,10 +3,14 @@
         
         <div class="spContainer mx-auto">
             <form [formGroup]="loginForm"  #f="ngForm">
+                
             <div class="card px-4 py-5 border-0 shadow">
                 <div class="d-inline text-left mb-3">
                     <h3 class="font-weight-bold">Login</h3>
                 </div>
+                <div  *ngIf="showMe" class="alert alert-danger" role="alert">
+                    User Does not Exists!
+                  </div>
                 <div class="d-inline text-center mb-0">
                     <div class="form-group mx-auto">
                         <input  formControlName="user" class="form-control inpSp" type="text" placeholder="Username" />
@@ -24,6 +28,7 @@
                 <div class="d-inline text-left mb-3">
                     <div class="form-group mx-auto">
                         <button (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary"  >
+                          
                             Login
                         </button>
                       

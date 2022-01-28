@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,Validator, Validators } from '@angular/forms';
 import { CanActivate, Router } from '@angular/router';
+import { NgbTimepickerI18nDefault } from '@ng-bootstrap/ng-bootstrap/timepicker/timepicker-i18n';
 import { LoginService } from './login.service';
 
 
@@ -15,8 +16,11 @@ export class LoginComponent implements OnInit {
   loginForm =new FormGroup({
     user:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required, Validators.minLength(2)]),
+    
    
   })
+  showMe=false;
+ 
  
   get user(){
     return this.loginForm.get('user');
@@ -40,7 +44,8 @@ export class LoginComponent implements OnInit {
 this._router.navigate(['../dashboard'])
 
        }else{
-         alert("wrong")
+        this.showMe=true;
+         
        }
     
      
