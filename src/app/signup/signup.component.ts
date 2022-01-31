@@ -1,3 +1,4 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
     user: new FormControl(null, [Validators.required]),
     password: new FormControl('', [Validators.required]),
     repassword: new FormControl('', [Validators.required]),
-    role:new FormControl('admin')
+    role: new FormControl('')
+  
 
   }, { validators: PasswordValidators });
   signup() {
@@ -37,14 +39,10 @@ export class SignupComponent implements OnInit {
   }
   Regis() {
     console.log(this.signupForm.value)
-    this.signupService.login(this.signupForm.value.user, this.signupForm.value.password, this.signupForm.value.role).subscribe((data: any) => {
+    this.signupService.signup(this.signupForm.value.user, this.signupForm.value.password,this.signupForm.value.role).subscribe((data: any) => {
       console.log(data, '=======', this.signupForm.value);
       localStorage.setItem('token', data.token)
-      if (data.token) {
-        this._router.navigate(['../dashboard'])
-      } else {
-
-      }
+     this._router.navigate(['../login'])
     })
   }
 }
