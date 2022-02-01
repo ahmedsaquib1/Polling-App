@@ -1,0 +1,21 @@
+<h1 style="text-align: center; background-color: rgb(163, 152, 152)">
+    User List
+</h1>
+
+<table class="table table-dark">
+    <thead>
+        <tr style="color: rgb(201, 129, 129);">
+            <th scope="col">Role</th>
+            <th scope="col">Password</th>
+             <th scope="col" >Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of Data">
+            <td>{{ item["role"] }}</td>
+            <td>{{ item["password"] }}</td>
+
+            <td>{{ item["username"] }}</td>
+        </tr>
+    </tbody>
+</table>
