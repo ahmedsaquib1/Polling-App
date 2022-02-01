@@ -11,6 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
+import { CreatepollComponent } from './createpoll/createpoll.component';
+
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { UserComponent } from './user/user.component';
     SignupComponent,
     DashboardComponent,
     UserComponent,
+    CreatepollComponent,
+ 
   ],
   imports: [
     BrowserModule,

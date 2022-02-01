@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginService.login(this.loginForm.value.user, this.loginForm.value.password).subscribe((data: any) => {
-      console.log(data, '=========', this.loginForm.value);
+     
       localStorage.setItem('token', data.token)
       if (data.token) {
 
