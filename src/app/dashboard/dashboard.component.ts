@@ -9,7 +9,8 @@ import { PollsService } from './dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-data=[]
+Data=[];
+//options=[]
   constructor( private pollsService:PollsService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,8 @@ data=[]
 polls(){
 this.pollsService.getData().subscribe( (data:any)=> {
 console.log(data)
-this.data=data.data;
+this.Data=data.data;
+//this.options=data.data;
 } )
 }
 }

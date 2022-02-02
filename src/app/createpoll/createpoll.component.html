@@ -1,1 +1,44 @@
-<p>createpoll works!</p>
+<h1 style="text-align: center; color: cadetblue">Create Poll</h1>
+<form class="mx-auto" style="width: 400px" [formGroup]="pollform" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Title</label>
+    <input formControlName="title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Title" />
+    <small class="text-danger" *ngIf="title && title.invalid && title.touched"> Title Is Required
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 1</label>
+    <input formControlName="option1" type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Option 1" />
+      <small class="text-danger" *ngIf="option1 && option1.invalid && option1.touched">Required
+      </small>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 2</label>
+    <input formControlName="option2" type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Option 2" />
+      <small class="text-danger" *ngIf="option2 && option2.invalid && option2.touched">Required
+      </small>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 3</label>
+    <input formControlName="option3" type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Option 3" />
+      <small class="text-danger" *ngIf="option3 && option3.invalid && option3.touched">Required
+      </small>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Option 4</label>
+    <input formControlName="option4" type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Option 4" />
+      <small class="text-danger" *ngIf="option4 && option4.invalid && option4.touched">Required
+      </small>
+  </div>
+  <div  *ngIf="showMe" class="alert alert-success" role="alert">
+    success
+  </div>
+</form>
+
+<div style="margin-top: 10px" class="text-center">
+  <button [disabled]="pollform.invalid" class="btn btn-primary btn-sx" type="button" (click)="onSubmit()">Submit</button>
+</div>

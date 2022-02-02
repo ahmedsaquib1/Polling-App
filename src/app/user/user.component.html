@@ -12,9 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="">
-            <td></td>
-            <td></td>
+        <tr *ngFor="let item of Data">
+            <td>{{ item["role"] }}</td>
+            <td>{{ item["username"] }}</td>
         </tr>
     </tbody>
 </table>
