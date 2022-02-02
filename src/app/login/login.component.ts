@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   })
   showMe = false;
+  isLoggedIn=false;
 
 
   get user() {
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
      
       localStorage.setItem('token', data.token)
       if (data.token) {
-
+           this.isLoggedIn=false;
         this._router.navigate(['../dashboard'])
 
       } else {

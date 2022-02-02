@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { CreatepollComponent } from './createpoll/createpoll.component';
+import { HeaderComponent } from './Header/Header.component';
 
 
 
@@ -23,6 +24,7 @@ import { CreatepollComponent } from './createpoll/createpoll.component';
     DashboardComponent,
     UserComponent,
     CreatepollComponent,
+    HeaderComponent,
  
   ],
   imports: [
@@ -32,9 +34,11 @@ import { CreatepollComponent } from './createpoll/createpoll.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
   
     
   ],
+  exports:[HeaderComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
