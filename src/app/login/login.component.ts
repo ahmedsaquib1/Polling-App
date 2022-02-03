@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   })
   showMe = false;
-  isLoggedIn=false;
+  
 
 
   get user() {
@@ -34,14 +34,16 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private _router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   login() {
     this.loginService.login(this.loginForm.value.user, this.loginForm.value.password).subscribe((data: any) => {
      
       localStorage.setItem('token', data.token)
+    console.log(data.token,"logon token++++++===============")
       if (data.token) {
-           this.isLoggedIn=false;
+          
         this._router.navigate(['../dashboard'])
 
       } else {
@@ -52,6 +54,7 @@ export class LoginComponent implements OnInit {
 
 
     })
+    
 
 
   }
