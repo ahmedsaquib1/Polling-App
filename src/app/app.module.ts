@@ -12,7 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { CreatepollComponent } from './createpoll/createpoll.component';
 import { HeaderComponent } from './Header/Header.component';
-import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {  } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,7 @@ import { MatTableModule } from '@angular/material/table';
     UserComponent,
     CreatepollComponent,
     HeaderComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -32,6 +39,11 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
+   MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+   
   ],
   exports: [HeaderComponent],
   providers: [],
