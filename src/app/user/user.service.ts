@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class  UserService {
+export class UserService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  public user(){
-    return this.httpClient.get(`https://secure-refuge-14993.herokuapp.com/list_users`);
- 
+  public user() {
+    return this.httpClient.get(
+      `https://secure-refuge-14993.herokuapp.com/list_users`,
+    )
   }
-
 }

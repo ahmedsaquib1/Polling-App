@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
-import { Data } from '@angular/router';
+import { Data } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,18 @@ import { Data } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Polling-app';
+  title = 'Polling-app'
   ngOnInit() {
-    this.checkUser();
+    this.checkUser()
   }
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = false
   checkUser() {
-    let data = localStorage.getItem('token');
-    console.log(data, '====================');
+    let data = localStorage.getItem('token')
+    console.log(data, '====================')
     if (data) {
-      this.isLoggedIn = true;
+      this.isLoggedIn = true
     } else {
-      this.isLoggedIn = false;
+      this.isLoggedIn = false
     }
   }
 }

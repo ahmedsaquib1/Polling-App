@@ -1,40 +1,34 @@
 <div>
     <div class="navbar navbar-dark bg-dark">
         <nav class="navbar navbar-expand-lg navbar-bg-light">
-            <a class="navbar-brand" style="color: rgb(196, 164, 116)">Polling App</a>
+            <a class="navbar-brand" style="color: rgb(196, 164, 116);">Polling App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a style="color: rgb(196, 164, 116)" routerLink="../user" class="nav-item nav-link active">User
+                    <a style="color: rgb(196, 164, 116);" routerLink="../user" class="nav-item nav-link active">
+            User
           </a>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a style="color: rgb(196, 164, 116)" routerLink="../dashboard" class="nav-item nav-link active">polls</a
-          >
-        </div>
-        <div class="navbar-nav">
-          <a
-            style="color: rgb(196, 164, 116)"
-            class="nav-item nav-link active"
-            routerLink="../createpoll"
-            >Create polls</a
-          >
-        </div>
-      </div>
-    </nav>
-    <form class="form-inline my-2 my-lg-0">
-      <button
-        (click)="logout()"
-        class="btn btn-outline-success my-2 my-sm-0"
-        routerLink="../login"
-        type="submit"
-      >
+                    <a style="color: rgb(196, 164, 116);" routerLink="../dashboard" class="nav-item nav-link active">
+            polls
+          </a>
+                </div>
+                <div class="navbar-nav">
+                    <a style="color: rgb(196, 164, 116);" class="nav-item nav-link active" routerLink="../createpoll">
+            Create polls
+          </a>
+                </div>
+            </div>
+        </nav>
+        <form class="form-inline my-2 my-lg-0">
+            <button (click)="logout()" class="btn btn-outline-success my-2 my-sm-0" routerLink="../login" type="submit">
         LogOut
       </button>
-    </form>
-  </div>
+        </form>
+    </div>
 </div>

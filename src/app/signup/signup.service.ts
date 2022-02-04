@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class  signupService {
+export class signupService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  public signup(username:string, password:string,role:string){
-    return this.httpClient.get(`https://secure-refuge-14993.herokuapp.com/add_user?username=${username}&password=${password}&role=${role}`);
- 
+  public signup(username: string, password: string, role: string) {
+    return this.httpClient.get(
+      `https://secure-refuge-14993.herokuapp.com/add_user?username=${username}&password=${password}&role=${role}`,
+    )
   }
-
 }
