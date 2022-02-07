@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       .subscribe((data: any) => {
         localStorage.setItem('token', data.token)
         console.log(data.token, 'logon token++++++===============')
+        
         if (data.token) {
           this._router.navigate(['../createpoll'])
         } else {

@@ -1,0 +1,15 @@
+<Form [formGroup]="pollsForm">
+    <div class="d-flex flex-row align-items-center question-title">
+        <h3 class="text-danger">Q.</h3>
+
+        <h5 class="mt-1 ml-2">{{ poll["title"] }}</h5>
+    </div>
+    <div *ngFor="let items of poll['options']">
+        <div class="ans ml-2">
+            <input type="radio" formControlName="option_text" value="{{items['option']}}" />
+            <span class="checkmark"></span>
+            <label class="options mt-1 ml-3">{{ items["option"] }}</label>
+        </div>
+    </div>
+    <button (click)="onSubmit()" class="btn btn-success">Submit</button>
+</Form>

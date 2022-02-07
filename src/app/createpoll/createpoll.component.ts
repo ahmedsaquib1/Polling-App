@@ -32,9 +32,9 @@ export class CreatepollComponent implements OnInit {
     return this.pollform.get('option4');
   }
 
-  constructor(private createpollservice: CreatepollService) {}
+  constructor(private createpollservice: CreatepollService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   onSubmit() {
     console.log(this.pollform.value);
     this.createpollservice

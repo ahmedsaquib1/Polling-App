@@ -18,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatTableModule } from '@angular/material/table'
 import { MatSort, MatSortModule } from '@angular/material/sort'
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { PollComponent } from './poll/poll.component'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatInputModule } from '@angular/material/input'
     UserComponent,
     CreatepollComponent,
     HeaderComponent,
+    PollComponent,
   ],
   imports: [
     BrowserModule,
