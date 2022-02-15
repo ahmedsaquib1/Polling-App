@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div>
+                        <h4 style="text-align: center">All Polls</h4>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom" *ngFor="let items of Data">
+                    <app-poll [poll]="items"></app-poll>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

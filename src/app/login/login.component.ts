@@ -1,29 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,Validator, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validator, Validators } from '@angular/forms'
+import { CanActivate, Router } from '@angular/router'
+import { NgbTimepickerI18nDefault } from '@ng-bootstrap/ng-bootstrap/timepicker/timepicker-i18n'
+import { LoginService } from './login.service'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginForm =new FormGroup({
-    user:new FormControl('',[Validators.required,]),
-    password:new FormControl('',[Validators.required, Validators.minLength(5)]),
+  loginForm = new FormGroup({
+    user: new FormControl('', [Validators.required]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
   })
-  loginUser(){
-    console.warn(this.loginForm.value)
+  showMe = false
+
+  get user() {
+    return this.loginForm.get('user')
   }
-  get user(){
-    return this.loginForm.get('user');
-  }
-  get password(){
-    return this.loginForm.get('password');
+  get password() {
+    return this.loginForm.get('password')
   }
 
-  constructor() { }
+  constructor(private loginService: LoginService, private _router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  login() {
+    this.loginService
+      .login(this.loginForm.value.user, this.loginForm.value.password)
+      .subscribe((data: any) => {
+        localStorage.setItem('token', data.token)
+        console.log(data.token, 'logon token++++++===============')
+        
+        if (data.token) {
+          this._router.navigate(['../createpoll'])
+        } else {
+          this.showMe = true
+        }
+      })
   }
-
 }
